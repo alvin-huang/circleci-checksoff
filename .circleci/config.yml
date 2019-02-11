@@ -1,0 +1,25 @@
+version: 2.1
+jobs:
+  one:
+    docker:
+      - image: alpine:latest
+    steps:
+      - run: echo "one"
+  two:
+    docker:
+      - image: alpine:latest
+    steps:
+      - run: echo "two"
+  three:
+    docker:
+      - image: alpine:latest
+    steps:
+      - run: echo "three"
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - one
+      - two
+      - three
